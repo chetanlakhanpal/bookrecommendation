@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-d
 import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
 import { appContext } from "./components/contexts";
+import Book from "./components/Book";
+import Updates from "./components/Updates";
 class App extends Component {
 
   constructor() {
@@ -47,13 +49,17 @@ class App extends Component {
               return <Login loggedInUser={this.loggedInUser}/>
             }} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/book/create" component={Book} />
             <Route exact path="/logout" render={() => {
-              sessionStorage.removeItem('user')
+              this.setState({
+                loggedInUser: {}
+              })
               return (
                 <Redirect to='/login' />
               )
             }} />
             <Route exact path="/dashboard" component={Dashboard}/>
+            <Route exact path="/updates" component={Updates}/>
           </Switch>
         </div>
       </Router>

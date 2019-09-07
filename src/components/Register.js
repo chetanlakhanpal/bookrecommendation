@@ -102,9 +102,9 @@ class Register extends Component {
                   <div className="form-group">
                     <select className="form-control" ref={this.genreRef} multiple>
                         <option>Interest</option>
-                      {genres.map(value => (
-                        <option key={value} value={value}>{value}</option>
-                      ))}
+                        {genres.map(value => (
+                          <option key={value} value={value}>{value}</option>
+                        ))}
                     </select>
                   </div>  
                 )}

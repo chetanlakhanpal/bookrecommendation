@@ -1,0 +1,1 @@
+export const HOSTNAME = 'http://ec2-13-126-151-172.ap-south-1.compute.amazonaws.com:8080'

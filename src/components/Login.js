@@ -34,7 +34,7 @@ class Login extends Component {
         email:'author@xyz.com',
         password: '1',
         type: 'AUTHOR'
-      }, 
+      }
     ]
 
     const user = data.filter(value => {
