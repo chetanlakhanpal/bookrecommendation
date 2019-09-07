@@ -1,13 +1,13 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-const Header = () => (
+const Header = (props) => (
     <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-        <a className="navbar-brand col-sm-3 col-md-2 mr-0" href="">Book Recommendation</a>
-        
-        <ul className="navbar-nav px-3 text-right">
-            <li className="nav-item text-nowrap">
-                <a className="nav-link" href="#">Sign out</a>
-            </li>
+        <Link to="/" className="navbar-brand col-sm-3 col-md-2 mr-0">Book Recommendation</Link>  
+        <ul className="navbar-nav mr-auto">
+            <Link to="/dashboard" className="nav-link">Dashboard</Link>
+            <Link to="/login" className="nav-link">Login</Link>
+            <Link to="/register" className="nav-link">Register</Link>
         </ul>
     </nav>
 );
