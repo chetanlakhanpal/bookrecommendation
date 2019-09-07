@@ -5,6 +5,7 @@ import Login from './components/Login'
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom"
 import Dashboard from "./components/Dashboard";
 import Register from "./components/Register";
+import { appContext } from "./components/contexts";
 class App extends Component {
 
   constructor() {
@@ -29,7 +30,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header />
+          <Header loggedInUser={this.state.loggedInUser}/>
           <Route path="/" render={() => {
             if(Object.keys(this.loggedInUser).length === 0) {
               return (
@@ -41,7 +42,7 @@ class App extends Component {
             {/* <Route path="/book/:book_id" component={Book} /> */}
             <Route exact path="/login"  render={() => {
               if(sessionStorage.getItem('user') !== null) {
-                return (<Dashboard />)
+                return (<Dashboard user={this.state.loggedInUser}/>)
               }
               return <Login loggedInUser={this.loggedInUser}/>
             }} />

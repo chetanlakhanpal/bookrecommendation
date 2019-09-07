@@ -40,7 +40,7 @@ class Login extends Component {
     const user = data.filter(value => {
       return value.email === this.state.email && value.password === this.state.password
     })
-debugger
+
     if(user[0] !== undefined) {
       this.props.loggedInUser(user[0])
       this.setState({
